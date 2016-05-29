@@ -1,2 +1,2 @@
-# homenet-plugin-hue
-Philips Hue plugin for Homenet
+# homenet-plugin-milight
+Milight plugin for Homenet
