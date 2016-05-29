@@ -17,5 +17,13 @@
   "keywords": [
     "milight",
     "homenet"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denwilliams/homenet-plugin-milight.git"
+  },
+  "bugs": {
+    "url": "https://github.com/denwilliams/homenet-plugin-milight/issues"
+  },
+  "homepage": "https://github.com/denwilliams/homenet-plugin-milight#readme"
 }
