@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "homenet-core": "^4.0.0-alpha.14",
+    "milight": "^1.0.0",
+    "node-milight-promise": "0.0.9"
+  },
+  "name": "homenet-plugin-milight",
+  "description": "Milight plugin for Homenet",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Den Williams",
+  "license": "MIT",
+  "keywords": [
+    "milight",
+    "homenet"
+  ]
+}
