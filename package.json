@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "homenet-core": "^4.0.0-alpha.14",
+    "homenet-core": "^4.0.0-alpha.15",
     "milight": "^1.0.0",
     "node-milight-promise": "0.0.9"
   },
   "name": "homenet-plugin-milight",
   "description": "Milight plugin for Homenet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "devDependencies": {},
   "scripts": {
