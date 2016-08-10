@@ -1,7 +1,8 @@
-import {plugin, service, ILogger, IConfig, ILightsManager, ILight, ILightFactory} from 'homenet-core';
-import {MilightBridge} from './bridge';
+import { plugin, service, ILogger, IConfig, ILightsManager, ILight, ILightFactory } from 'homenet-core';
+import { MilightBridge } from './bridge';
+import { EventEmitter } from 'events';
 
-export class MilightLight implements ILight {
+export class MilightLight extends EventEmitter implements ILight {
   private _id: string;
   private _zone: number;
   private _bridge: MilightBridge;
@@ -9,6 +10,7 @@ export class MilightLight implements ILight {
   private _state: string;
 
   constructor(instanceId: string, zoneId: number, bridge: MilightBridge, logger: ILogger) {
+    super();
     this._id = instanceId;
     this._zone = zoneId;
     this._bridge = bridge;
@@ -45,13 +47,5 @@ export class MilightLight implements ILight {
 
   turnOff() : void {
     this.set(false);
-  }
-
-  on() : void {
-    this.turnOn();
-  }
-
-  off() : void {
-    this.turnOff();
   }
 }
