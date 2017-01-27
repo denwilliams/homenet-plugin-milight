@@ -5,12 +5,10 @@ const commands = require('node-milight-promise').commands2;
  * Milight Wireless Bridge
  */
 export class MilightBridge {
-  private _bridge;
-  private _id;
+  private bridge;
 
-  constructor(id: string, host: string) {
-    this._id = id;
-    this._bridge = new Milight({
+  constructor(private id: string, host: string) {
+    this.bridge = new Milight({
       ip: host,
       delayBetweenCommands: 75,
       commandRepeat: 2
@@ -18,10 +16,10 @@ export class MilightBridge {
   }
 
   turnOn(zone: number) : void {
-    this._bridge.sendCommands(commands.white.on(zone));
+    this.bridge.sendCommands(commands.white.on(zone));
   }
 
   turnOff(zone: number) : void {
-    this._bridge.sendCommands(commands.white.off(zone));
+    this.bridge.sendCommands(commands.white.off(zone));
   }
 }

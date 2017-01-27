@@ -1,25 +1,19 @@
-import { plugin, service, ILogger, IConfig, ILightsManager, ILight, ILightFactory } from 'homenet-core';
+import { plugin, service, ILogger, IConfig, ILightsManager, ILightSwitch } from 'homenet-core';
 import { MilightBridge } from './bridge';
 import { EventEmitter } from 'events';
 
-export class MilightLight extends EventEmitter implements ILight {
-  private _id: string;
-  private _zone: number;
-  private _bridge: MilightBridge;
-  private _logger: ILogger;
-  private _state: string;
+export class MilightLight extends EventEmitter implements ILightSwitch {
+  private id: string;
+  private state: string;
 
-  constructor(instanceId: string, zoneId: number, bridge: MilightBridge, logger: ILogger) {
+  constructor(instanceId: string, private zoneId: number, private bridge: MilightBridge, private logger: ILogger) {
     super();
-    this._id = instanceId;
-    this._zone = zoneId;
-    this._bridge = bridge;
-    this._logger = logger;
-    this._state = 'unknown';
+    this.id = instanceId;
+    this.state = 'unknown';
   }
 
   get() : string {
-    return this._state;
+    return this.state;
   }
 
   set(value: string|boolean) : void {
@@ -30,22 +24,14 @@ export class MilightLight extends EventEmitter implements ILight {
 
     switch (state) {
       case 'full':
-        this._bridge.turnOn(this._zone);
+        this.bridge.turnOn(this.zoneId);
         break;
       case 'off':
-        this._bridge.turnOff(this._zone);
+        this.bridge.turnOff(this.zoneId);
         break;
       default:
         return;
     }
-    this._state = state;
-  }
-
-  turnOn() : void {
-    this.set(true);
-  }
-
-  turnOff() : void {
-    this.set(false);
+    this.state = state;
   }
 }
