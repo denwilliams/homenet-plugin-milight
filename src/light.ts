@@ -1,8 +1,8 @@
-import { plugin, service, ILogger, IConfig, ILightsManager, ILightSwitch } from 'homenet-core';
+import { plugin, service, ILogger, IConfig, ILightsManager, ISettable } from 'homenet-core';
 import { MilightBridge } from './bridge';
 import { EventEmitter } from 'events';
 
-export class MilightLight extends EventEmitter implements ILightSwitch {
+export class MilightLight extends EventEmitter implements ISettable {
   private id: string;
   private state: string;
 
@@ -33,5 +33,6 @@ export class MilightLight extends EventEmitter implements ILightSwitch {
         return;
     }
     this.state = state;
+    this.emit('update', state);
   }
 }

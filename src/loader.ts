@@ -1,4 +1,4 @@
-import {plugin, service, IPluginLoader, ILogger, IConfig, ILightsManager, ILightSwitch, ILightSwitchFactory} from 'homenet-core';
+import {plugin, service, IPluginLoader, ILogger, IConfig, ILightsManager, ISettable, IClassTypeFactory} from 'homenet-core';
 
 
 import { MilightBridge } from './bridge';
@@ -15,8 +15,8 @@ export class MilightPluginLoader implements IPluginLoader {
     this.bridges = {};
     this.init();
 
-    const lightFactory: ILightSwitchFactory = this.lightFactory.bind(this);
-    lights.addType('milight', lightFactory);
+    const lightFactory: IClassTypeFactory<ISettable> = this.lightFactory.bind(this);
+    lights.addSettableType('milight', lightFactory);
   }
 
   load() : void {
@@ -35,7 +35,7 @@ export class MilightPluginLoader implements IPluginLoader {
     });
   }
 
-  private lightFactory(id : string, opts : any) : ILightSwitch {
+  private lightFactory(id : string, opts : any) : ISettable {
     this.logger.info('Adding Milight light: ' + id);
     const bridge = this.bridges[opts.bridge];
     return new MilightLight(id, opts.zoneId, bridge, this.logger);
