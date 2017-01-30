@@ -1,4 +1,4 @@
-import { plugin, service, ILogger, IConfig, ILightsManager, ISettable } from 'homenet-core';
+import { plugin, service, ILogger, IConfig, ILightsManager, ISettable } from '@homenet/core';
 import { MilightBridge } from './bridge';
 import { EventEmitter } from 'events';
 

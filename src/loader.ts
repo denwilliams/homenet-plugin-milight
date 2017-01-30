@@ -1,4 +1,4 @@
-import {plugin, service, IPluginLoader, ILogger, IConfig, ILightsManager, ISettable, IClassTypeFactory} from 'homenet-core';
+import {plugin, service, IPluginLoader, ILogger, IConfig, ILightsManager, ISettable, IClassTypeFactory} from '@homenet/core';
 
 
 import { MilightBridge } from './bridge';
