@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '4'
+before_install:
+- rm -rf lib/
+- npm install
+- npm install -g typescript@2.1.5
+- tsc
+deploy:
+  provider: npm
+  email: work@denwilliams.net
+  on:
+    tags: true
+    repo: denwilliams/homenet-plugin-ninjablock
+  api_key:
+    secure: Arfnu2qz0Eh31n9Hr8M42hy9ZEAQMqeYBtkjJqS5BzgbV8HSVXCq0x66axrTPxkK5skZFq86gosarYGfjkBz44SKO1m594KO5atEkrK8eGO5vzk18binx/Koc70gkxGM2a4sgkKEJZ4ZXYEhIHrKRT5a+zZMaVRJF3CWEQvRvl7TW1iHZ1TxUsGmbd9El/VFso+n1R4KXgXX3dxhFqZ8Y4RoNYlDjdtcHihgUNjR99Grce/BY9v6baIXUo7xLVsBOjZLgADBRjSRl4ITCETyIQyHxfXjPbEiLmDCURDnJA6r6Y0Uny19VSmRKQN5x/8LLaOhwpgGWelSbYc+5P8IzqrKgma0jbKfqf1Y1t/mo7/az+9Mx+1AOWjhEN6WXJ5E0CayfNUEuqoiqgmQORiuR4YQR3PJyaJxbnKJQeP+ItZu7JCl2NxyuOQ8oMjWmHNKPj9IA4fCJhGuIVmw3LAf3bqSkW+uQh8rPygOMQMc3TizxFpBwX0ueQcnwGSku2+ACZPQnt2SUyYnzGvOr9APgW1C+Ck5decFr5EIwKX1v2ylYJNQMiI/XHE28on6X7x/WwM02FamlFOZrF6yHKXr5SFCBD2kb/Grw1yX8c6YuXTWTrusK/s8cLipsB8PcbdBjA/On96XminD3LhtPdw0//ixhIzXEpt9WZ1D386NkjE=
