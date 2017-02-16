@@ -1,7 +1,7 @@
 {
   "name": "@homenet/plugin-milight",
   "description": "Milight plugin for Homenet",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "lib/index.js",
   "dependencies": {
     "milight": "^1.0.0",
