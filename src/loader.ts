@@ -35,9 +35,9 @@ export class MilightPluginLoader implements IPluginLoader {
     });
   }
 
-  private lightFactory(id : string, opts : any) : ISettable {
+  private lightFactory(id : string, opts : { bridge: string, groupId: number }) : ISettable {
     this.logger.info('Adding Milight light: ' + id);
     const bridge = this.bridges[opts.bridge];
-    return new MilightLight(id, opts.zoneId, bridge, this.logger);
+    return new MilightLight(id, opts.groupId, bridge, this.logger);
   }
 }
