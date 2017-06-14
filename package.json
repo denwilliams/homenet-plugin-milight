@@ -1,7 +1,7 @@
 {
   "name": "@homenet/plugin-milight",
   "description": "Milight plugin for Homenet",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "dependencies": {
     "milight": "^1.0.0",
@@ -19,8 +19,12 @@
   "license": "MIT",
   "keywords": [
     "milight",
-    "homenet"
+    "homenet",
+    "homenet4-plugin"
   ],
+  "homenet4": {
+    "plugins": ["MilightPluginLoader"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/denwilliams/homenet-plugin-milight.git"
