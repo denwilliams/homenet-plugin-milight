@@ -1,4 +1,4 @@
 declare module 'homenet-plugin-milight' {
   import { IPluginLoader } from '@homenet/core';
-  export var MilightPluginLoader: new (...args: any[]) => IPluginLoader
+  export function create(annotate: any): { MilightPluginLoader: new (...args: any[]) => IPluginLoader }
 }
